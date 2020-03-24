@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista lotów</title>
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+   <header>
+      <h1>Lista lotów</h1>
+      <img src="logo.jpg" alt="logo firmy">   
+   </header>
+   <section>
+      <nav>
+         <ul id="menu">
+            <li> <a href = "opis_lotu.html">Załogi</a> </li>
+            <li id = "wrapped"> Rozkład lotów
+            <ul id = "hidden">
+            <li><a href = "opis_lotu.html">Aktualny</a></li>
+            <li><a href = "opis_lotu.html">Archiwalny</a></li>
+            <li><a href = "opis_lotu.html">Przyszły</a></li>
+            </ul>
+            </li>
+            <li> <a href = opis_lotu.html>Blog podróżniczy</a> </li>
+            <li>Kup Bilet</li>
+            <li>Opóźnienia</li>
+            <li>Zapowiedzi</li>
+            <li>Nasza flota</li>
+            <li>Kontakt</li>
+         </ul>
+      </nav>
+      <div id="tablica">
+         <table>
+            <thead>
+               <tr>
+                     <th>nr lotu</th> <th>skąd</th> <th>dokąd</th> <th>data</th> <th>godzina</th>
+               </tr>
+               <tr>
+                  <td><a href="opis_lotu.html">LO336</a></td>
+                  <td>Paryż</td>
+                  <td>Warszawa</td>
+                  <td>01.10.2019</td>
+                  <td>19:45 LT</td>
+               </tr>
+            </thead>
+         </table>
+      </div>
+      <div id="opoznienia">
+         <h2>Opóźnienia</h2>
+         <table>
+            <tr>
+               <th>Numer lotu</th>
+               <th>Opóźnienie</th>
+            </tr>
+            <tr id="cancelled">
+               <td>LO336</td>
+               <td>cancelled</td>
+            </tr>
+            <tr id="soft_delay">
+               <td>LO335</td>
+               <td>15 min</td>
+            </tr>
+            <tr id="hard_delay">
+               <td>LO10</td>
+               <td>45 min</td>
+            </tr>
+         </table>
+         <form action="mailto:k.kuta2@student.uw.edu.pl" method="post">
+            <h3>Rezerwacja lotu</h3>
+            <label>Imię</label> <input type="text" name="imie" />
+            <p></p>
+            <label>Nazwisko</label> <input type="text" name="nazwisko" />
+            <p></p>
+            Skąd:
+            <select name="select">
+               <option>Paryż</option>
+               <option>Warszawa</option>
+               <option>NYC</option>
+            </select>
+            Dokąd:
+            <select name="select">
+               <option>Paryż</option>
+               <option>Warszawa</option>
+               <option>NYC</option>
+            </select>
+            <p></p>
+            <label>Data w formacie dd-mm-rrrr:</label>
+            <input type="text" name="data" />
+            <p></p>
+            <input type="submit" value="Wyślij">
+            <input type="reset" value="Wyczyść">
+         </form>
+      </div>
+    </section>
+
+    <footer>
+      Autor: Kacper Kuta
+      <div id="footer"></div>
+  </footer>
+</body>
+
+</html>
