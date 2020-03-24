@@ -8,12 +8,12 @@
     <script src='main.js'></script>
 </head>
 <body>
-   <header>
-      <h1>Lista lotów</h1>
-      <img src="logo.jpg" alt="logo firmy">   
-   </header>
-   <section>
-      <nav>
+   <div id = "main_div" class="grid_container">
+      <header class = "header">
+         <h1>Lista lotów</h1>
+         <img src="logo.jpg" alt="logo firmy">   
+      </header>
+      <nav class = "nav_menu">
          <ul id="menu">
             <li> <a href = "opis_lotu.html">Załogi</a> </li>
             <li id = "wrapped"> Rozkład lotów
@@ -31,7 +31,7 @@
             <li>Kontakt</li>
          </ul>
       </nav>
-      <div id="tablica">
+      <div id="tablica" class="odloty">
          <table>
             <thead>
                <tr>
@@ -47,7 +47,7 @@
             </thead>
          </table>
       </div>
-      <div id="opoznienia">
+      <div id="opoznienia" class="opoznione">
          <h2>Opóźnienia</h2>
          <table>
             <tr>
@@ -67,38 +67,41 @@
                <td>45 min</td>
             </tr>
          </table>
-         <form action="mailto:k.kuta2@student.uw.edu.pl" method="post">
-            <h3>Rezerwacja lotu</h3>
-            <label>Imię</label> <input type="text" name="imie" />
-            <p></p>
-            <label>Nazwisko</label> <input type="text" name="nazwisko" />
-            <p></p>
-            Skąd:
-            <select name="select">
-               <option>Paryż</option>
-               <option>Warszawa</option>
-               <option>NYC</option>
-            </select>
-            Dokąd:
-            <select name="select">
-               <option>Paryż</option>
-               <option>Warszawa</option>
-               <option>NYC</option>
-            </select>
-            <p></p>
-            <label>Data w formacie dd-mm-rrrr:</label>
-            <input type="text" name="data" />
-            <p></p>
-            <input type="submit" value="Wyślij">
-            <input type="reset" value="Wyczyść">
-         </form>
       </div>
-    </section>
+      <form action="mailto:k.kuta2@student.uw.edu.pl" method="post" class = "rezerwacja">
+         <h3>Rezerwacja lotu</h3>
+         <label>Imię</label> <input type="text" name="imie" />
+         <p></p>
+         <label>Nazwisko</label> <input type="text" name="nazwisko" />
+         <p></p>
+         Skąd:
+         <select name="select">
+            <option>Paryż</option>
+            <option>Warszawa</option>
+            <option>NYC</option>
+         </select>
+         Dokąd:
+         <select name="select">
+            <option>Paryż</option>
+            <option>Warszawa</option>
+            <option>NYC</option>
+         </select>
+         <p></p>
+         <label>Data w formacie dd-mm-rrrr:</label>
+         <input type="text" name="data" />
+         <p></p>
+         <input type="submit" value="Wyślij">
+         <input type="reset" value="Wyczyść">
+      </form>
+      <footer class="footer">
+         Autor: Kacper Kuta
+         <div id="footer"></div>
+      </footer>
 
-    <footer>
-      Autor: Kacper Kuta
-      <div id="footer"></div>
-  </footer>
+      <text id="success">
+         <p>POMYŚLNA REZERWACJA!</p>
+      </text>
+   </div>
 </body>
 
 </html>
