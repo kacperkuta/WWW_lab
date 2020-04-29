@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Quizzy!</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <div class="grid">
+        <h1 id="header">Quizzy!</h1>
+        <div id="startButton">
+            <button id="start">Rozpocznij QUIZ</button>
+        </div>
+
+        <div id="quiz">
+            <div id = "timer">
+                <p id = "timer_par">0.0</p>
+            </div>
+            <h2>Wstęp</h2>
+            <p id = "entry"></p>
+            <h2 id = "task_header">Zadanie</h2>
+            <p id = "task"></p>
+            <h2>Twoja odpowiedź:</h2>
+            <input id="anwser"></input>
+            <br>
+
+            <div id = "quizButtons">
+                <button id="previous" class = "non_start">Poprzednie</button>
+                <button id="end" class = "non_start">Stop</button>
+                <button id="next" class = "non_start">Następne</button>
+            </div>
+
+            <div id = "cancelButton">
+                <button id = "cancel"  class = "non_start">Anuluj quiz</button>
+            </div>
+        </div>
+
+        <div id = "results">
+            <h4>Twój wynik to: </h4>
+            <p id = "results_par" class = "report"></p>
+            <h4>Kary za zadania: </h4>
+            <p id = "mistakes" class = "report"></p>
+            <h4>Suma kar: </h4>
+            <p id = "penalties" class = "report"></p>
+            <div id="returnDiv">
+                <button id="return" class="return">Od nowa!</button>
+                <button id="saveNoStats" class="return">Zapisz wynik</button>
+                <button id="saveWithStats" class="return">Zapisz wynik i statystyki</button>
+            </div>
+            <div id="statsDiv">
+                <h4>Najlepsze wyniki:</h4>
+                <p id="stats"></p>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
