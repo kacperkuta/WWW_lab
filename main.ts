@@ -1,5 +1,5 @@
 
-    let jsonString: string = `{
+    const jsonString: string = `{
         "piloci": [
             "Pirx",
             "Exupery",
@@ -28,33 +28,33 @@
         lotniska: Map<string, ILotnisko>;
     }
 
-    let dataStructure: ILiniaLotnicza = JSON.parse(jsonString);
+    const dataStructure: ILiniaLotnicza = JSON.parse(jsonString);
 
-    let el = document.querySelector("div[id=main_div]") as HTMLElement;
-    let parag = document.querySelector("p[id = testowy_paragraf]");
+    const el = document.querySelector("div[id=main_div]") as HTMLElement;
+    const parag = document.querySelector("p[id = testowy_paragraf]");
 
-    //Zmiana pragrafu
+    // Zmiana pragrafu
     parag.innerHTML = "Zmieniony testowy paragraf";
 
 
     // Tworzy nowy element paragrafu
-    let p = document.createElement("p");
+    const p = document.createElement("p");
     p.innerHTML = "Dodany paragraf";
     document.body.appendChild(p);
 
-    //Wybieranie elementów data-id-pasazera, dodałem listę na stronę główną aby nie tworzyć drugiego pliku
-    let pozycja: NodeListOf<HTMLElement> = document.querySelectorAll("li[class=pax]");
+    // Wybieranie elementów data-id-pasazera, dodałem listę na stronę główną aby nie tworzyć drugiego pliku
+    const pozycja: NodeListOf<HTMLElement> = document.querySelectorAll("li[class=pax]");
     let najwiekszyPax: HTMLElement = null;
     let najwiekszy: string = "";
-    pozycja.forEach((el) => {
-        if (el.dataset.idPasazera > najwiekszy) {
-            najwiekszy = el.dataset.idPasazera;
-            najwiekszyPax = el;
+    pozycja.forEach((ele) => {
+        if (ele.dataset.idPasazera > najwiekszy) {
+            najwiekszy = ele.dataset.idPasazera;
+            najwiekszyPax = ele;
         }
     });
     console.log(najwiekszyPax.innerHTML);
 
-    //Promise
+    // Promise
     function kolorek(time: number): Promise<void> {
         return new Promise(resolve => {
             setTimeout(function () {
@@ -65,7 +65,7 @@
 
     kolorek(1000);
 
-    //Przerobione tęczoweKolory()
+    // Przerobione tęczoweKolory()
     function kolorek2(time: number): Promise<void> {
         return new Promise(resolve => {
             setTimeout(function () {
@@ -94,11 +94,11 @@
         return kolorek2(1000)
     });
 
-    //Zdjecie z repo
+    // Zdjecie z repo
 
-    let opis: string = '"avatar_url": "';
+    const opis: string = '"avatar_url": "';
 
-    let avatarUrl: Promise<string> = fetch("https://api.github.com/repos/Microsoft/TypeScript/commits").then(
+    const avatarUrl: Promise<string> = fetch("https://api.github.com/repos/Microsoft/TypeScript/commits").then(
         response => response.text().then(
             tekst => tekst.substr(tekst.search('"avatar_url"'))
         ).then(
@@ -109,22 +109,22 @@
     );
 
     avatarUrl.then(url => {
-            let myImage = new Image(500);
+            const myImage = new Image(500);
             myImage.src = url;
             document.body.appendChild(myImage);
         }
     );
 
 
-    //Kliknięcia w prawą kolumnę bez obszaru formularza i tabeli
-    let delay = document.querySelector("div[id=opoznienia]");
-    let form = document.querySelector("form") as HTMLElement;
+    // Kliknięcia w prawą kolumnę bez obszaru formularza i tabeli
+    const delay = document.querySelector("div[id=opoznienia]");
+    const form = document.querySelector("form") as HTMLElement;
     el.addEventListener("click", handleClick);
     let clickCount: number = 0;
 
     function handleClick(event) {
-        if (event.target == form || event.target == delay) {
-            if (clickCount % 2 == 0)
+        if (event.target === form || event.target === delay) {
+            if (clickCount % 2 === 0)
                 form.style.backgroundColor = 'indigo';
             else
                 form.style.background = 'red';
@@ -133,10 +133,10 @@
         }
     }
 
-    //Klikiecia w prawa kolumnę jedynie bez obszaru formularza
+    // Klikiecia w prawa kolumnę jedynie bez obszaru formularza
     function handleClick2(event) {
-        if (event.target == form || event.target == delay || form.contains(event.target) || delay.contains(event.target)) {
-            if (clickCount % 2 == 0)
+        if (event.target === form || event.target === delay || form.contains(event.target) || delay.contains(event.target)) {
+            if (clickCount % 2 === 0)
                 form.style.backgroundColor = 'indigo';
             else
                 form.style.background = 'red';
@@ -145,25 +145,25 @@
         }
     }
 
-    //Fibonacci
+    // Fibonacci
 
     function Fibo10(i: number) {
         return Fibo(i * 10);
     }
 
-    //input i submit
-    let imie: HTMLInputElement = document.querySelector("input[name=imie]");
-    let nazwisko: HTMLInputElement = document.querySelector("input[name=nazwisko]");
-    let data: HTMLDataElement = document.querySelector("input[name=data]");
-    let org: HTMLSelectElement = document.querySelector("select[id=origin]");
-    let dest: HTMLSelectElement = document.querySelector("select[id = destination]");
-    let submit: HTMLButtonElement = document.querySelector("input[id=submit]");
+    // input i submit
+    const imie: HTMLInputElement = document.querySelector("input[name=imie]");
+    const nazwisko: HTMLInputElement = document.querySelector("input[name=nazwisko]");
+    const data: HTMLDataElement = document.querySelector("input[name=data]");
+    const org: HTMLSelectElement = document.querySelector("select[id=origin]");
+    const dest: HTMLSelectElement = document.querySelector("select[id = destination]");
+    const submit: HTMLButtonElement = document.querySelector("input[id=submit]");
 
     check();
 
     function check() {
-        submit.disabled = !(imie.value != "" && nazwisko.value != "" &&
-            new Date(data.value).getTime() < new Date().getTime() && org.value != dest.value);
+        submit.disabled = !(imie.value !== "" && nazwisko.value !== "" &&
+            new Date(data.value).getTime() < new Date().getTime() && org.value !== dest.value);
     }
 
     imie.onchange = check;
@@ -173,9 +173,9 @@
     dest.onchange = check;
 
     export function Fibo(i: number) {
-        if (i == 0)
+        if (i === 0)
             return 0;
-        if (i == 1)
+        if (i === 1)
             return 1;
         else
             return Fibo(i-1) + Fibo(i-2);
