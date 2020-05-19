@@ -1,14 +1,119 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Lista lotów</title>
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
+   <script>
+      document.addEventListener("DOMContentLoaded", () => {
+         let body = document.querySelector("body");
+         let pole1 = body.querySelector("input[name=imie]");
+         pole1.value = "zmiana!";
+         let pole2 = body.querySelector("input[name=nazwisko]");
+         pole2.value = "zmiana!";
+      });
+   </script>
 </head>
 <body>
-    
+   <div id = "main_div" class="grid_container">
+      <header class = "header">
+         <h1>Lista lotów</h1>
+         <img src="logo.jpg" alt="logo firmy">   
+      </header>
+      <p id = "testowy_paragraf">Testowy paragraf</p>
+      <nav class = "nav_menu">
+         <ul id="menu">
+            <li> <a href = "opis_lotu.html">Załogi</a> </li>
+            <li id = "wrapped"> Rozkład lotów
+            <ul id = "hidden">
+            <li><a href = "opis_lotu.html">Aktualny</a></li>
+            <li><a href = "opis_lotu.html">Archiwalny</a></li>
+            <li><a href = "opis_lotu.html">Przyszły</a></li>
+            </ul>
+            </li>
+            <li> <a href = opis_lotu.html>Blog podróżniczy</a> </li>
+            <li>Kup Bilet</li>
+            <li>Opóźnienia</li>
+            <li>Zapowiedzi</li>
+            <li>Nasza flota</li>
+            <li>Kontakt</li>
+         </ul>
+      </nav>
+      <div id="tablica" class="odloty">
+         <table>
+            <thead>
+               <tr>
+                     <th>nr lotu</th> <th>skąd</th> <th>dokąd</th> <th>data</th> <th>godzina</th>
+               </tr>
+               <tr>
+                  <td><a href="opis_lotu.html">LO336</a></td>
+                  <td>Paryż</td>
+                  <td>Warszawa</td>
+                  <td>01.10.2019</td>
+                  <td>19:45 LT</td>
+               </tr>
+            </thead>
+         </table>
+      </div>
+      <div id="opoznienia" class="opoznione">
+         <h2>Opóźnienia</h2>
+         <table>
+            <tr>
+               <th>Numer lotu</th>
+               <th>Opóźnienie</th>
+            </tr>
+            <tr id="cancelled">
+               <td>LO336</td>
+               <td>cancelled</td>
+            </tr>
+            <tr id="soft_delay">
+               <td>LO335</td>
+               <td>15 min</td>
+            </tr>
+            <tr id="hard_delay">
+               <td>LO10</td>
+               <td>45 min</td>
+            </tr>
+         </table>
+      </div>
+      <form action="mailto:k.kuta2@student.uw.edu.pl" method="post" class = "rezerwacja">
+         <h3>Rezerwacja lotu</h3>
+         <label>Imię</label> <input type="text" name="imie" />
+         <p></p>
+         <label>Nazwisko</label> <input type="text" name="nazwisko" />
+         <p></p>
+         Skąd:
+         <select name="select" id ="origin">
+            <option>Paryż</option>
+            <option>Warszawa</option>
+            <option>NYC</option>
+         </select>
+         Dokąd:
+         <select name="select" id = "destination">
+            <option>Paryż</option>
+            <option>Warszawa</option>
+            <option>NYC</option>
+         </select>
+         <p></p>
+         <label>Data</label>
+         <input type="date" name="data" />
+         <p></p>
+         <input type="submit" value="Wyślij" id = "submit">
+         <input type="reset" value="Wyczyść">
+      </form>
+      <footer class="footer">
+         Autor: Kacper Kuta
+         <div id="footer"></div>
+      </footer>
+   </div>
+   <ul id="lista">
+      <li id='pasazer1' class="pax" data-id-pasazera="1">Anna Juszczak <b>Seat: 2B</b></li>
+      <li id='pasazer2' class="pax" data-id-pasazera="2">Tomasz Byrdy <b>Seat: 2A</b></li>
+      <li id='pasazer3' class="pax" data-id-pasazera="3">Anna Kos <b>Seat: 2V</b></li>
+      <li id='pasazer4' class="pax" data-id-pasazera="4">Hubert Ijak <b>Seat: 2D</b></li>
+   </ul>
+   <script>var exports = {};</script>
+   <script src="main.js"></script>
 </body>
 </html>

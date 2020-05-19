@@ -7,5 +7,8 @@
     "rules": {
         "no-console":false
     },
-    "rulesDirectory": []
+    "rulesDirectory": [],
+    "compilerOptions": {
+        "lib": ["es2015"]
+    }
 }
